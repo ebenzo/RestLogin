@@ -15,7 +15,7 @@ import retrofit2.http.Query;
 
 public class ApiClient {
 
-    private static final String PATH="https://192.168.1.129:45455/Api/Propietarios/";
+    private static final String PATH="http://localhost:50559/api/propietarios/";//"https://192.168.1.129:45455/Api/Propietarios/";
     private static MyApiInterface myApiInterface;
 
     public static MyApiInterface getMyApiClient()
