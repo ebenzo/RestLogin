@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.restlogin.request.ApiClient;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<String> call, Response<String> response) {
                 if(response.isSuccessful())
                 {
+                    Toast.makeText(getApplicationContext(), "'tas logueado", Toast.LENGTH_LONG).show();
                     token = response.body();
                 }
             }
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.d("ID:",t.getMessage());
+                Toast.makeText(getApplicationContext(), "error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
